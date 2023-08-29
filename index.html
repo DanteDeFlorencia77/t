@@ -3,109 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        function mostrarImagenAmpliada() {
-            const nuevaVentana = window.open("pagina_ampliada.html", "_blank", "width=800,height=600");
-            
-            nuevaVentana.onbeforeunload = function() {
-                window.location.href = "index.html";
-            };
-        }
-    </script>
-    <title>Huerto Variado</title>
+    <title>Imágenes Miniatura</title>
+    <link rel="stylesheet" href="styles_h.css">
+</head>
+  <title>Mi Huerto</title>
 </head>
 <body>
-    <header>
-        <h1 style="color: hsla(0, 85%, 5%, 0.856); font-size:30px; 
-        background-color: rgb(219, 235, 235,0.5); margin-left:400px; margin-right: 400px;">BIENVENIDO AL HUERTO VARIADO</h1>
-
-        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-            <!-- Representación del cuerpo del tomate -->
-            <ellipse cx="50" cy="50" rx="40" ry="45" fill="red" />
-            
-            <!-- Representación del tallo -->px
-            <rect x="45" y="10" width="10" height="30" fill="green" />
-          </svg>
-          
-    </header>
+  <header>
+    <h1>Bienvenido al Huerto variado</h1>
+  </header>
+  <div class="content">
+    <nav class="custom-nav">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+         elit. Deleniti quia doloremque quos facilis maiores! Labo
+         riosam at magnam suscipit mollitia 
+        debitis voluptatibus ullam, dolores aliquid, exercita
+        tionem nulla animi laborum unde maxime!</p>
+      <h2>Imeges para ampliar</h2>
+    <a href="ampliar.html?imagen=imagen1.jpg" target="_blank" class="imagen-enlace">
+      <img src="imagenes/s_2.png" width="100px" height="100px" alt="Imagen 2" />
+    </a>
+  <a href="ampliar.html?imagen=imagen2.jpg" target="_blank" class="imagen-enlace">
+        <img src="imagenes/s_1.png" width="100px" height="100px" alt="Imagen 2" />
+    </a>
+    <a href="ampliar.html?imagen=imagen2.jpg" target="_blank" class="imagen-enlace">
+      <img src="imagenes/v_7.jpeg" width="100px" height="100px" alt="Imagen 2" />
+  </a><a href="ampliar.html?imagen=imagen2.jpg" target="_blank" class="imagen-enlace">
+    <img src="imagenes/r_1.png" width="100px" height="100px" alt="Imagen 2" />
+  </a>
+    <!-- Agrega más imágenes y enlaces aquí -->
     
-    <nav>
-        <ul>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#tecnicas">Técnicas de Cultivo</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#recetas">Recetas</a></li>
-            <li><a href="#videos">Videos</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
-    <section class="section-wrapper">
-        <section>
-            <!-- Contenido de la primera sección -->
-            <h3>Primeros tomates de Rota</h3>
-            
-            
-            <img src="imagenes/es_1.jpeg" width="100px" height="100px">
-            <img src="imagenes/es_2.jpeg" width="100px" height="100px">
-            <img src="imagenes/tomate_1.jpeg" width="100px" height="100px">
-            <p> Esta veriedad require más tiempo de cultivo y mayor exposición al la luz</p>
-            <img src="imagenes/es_1.jpeg" width="100px" height="100px">
-            <img src="imagenes/es_2.jpeg" width="100px" height="100px">
-            <img src="imagenes/tomate_2.jpeg" width="100px" height="100px">
-            <img src="imagenes/tomate_3.jpg" width="100px" height="100px">
-        </section>
-        <section>
-            <!-- Contenido de la segunda sección -->
-           <h3>Segundos tomates de Rota</h3>
-            <!-- Imagen con enlace para ampliar -->
-         <img src="imagenes/tomate_1.jpeg" alt="Imagen Miniatura" onclick="mostrarImagenAmpliada()" width="100pc" height="100px">
-         <img src="imagenes/tomate_2.jpeg" alt="Imagen Miniatura" onclick="mostrarImagenAmpliada()" width="100pc" height="100px">
-         <img src="imagenes/tomate_3.jpg" alt="Imagen Miniatura" onclick="mostrarImagenAmpliada()" width="100pc" height="100px">
-           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero culpa sed cupiditat
-            e numquam temporibus officiis dicta minima opti
-            o praesentium voluptatem aliquid modi labore obcaecati, deleniti nobis laborum quis, suscipit sequi!</p>
-           
-           
-        </section>
+    <script>
+        // Función para cerrar la ventana
+        function cerrarVentana() {
+            window.close();
+        }
+
+        // Agregar el evento de clic a todos los enlaces de imágenes
+        var enlaces = document.querySelectorAll('.imagen-enlace');
+        enlaces.forEach(function(enlace) {
+            enlace.addEventListener('click', function(event) {
+                event.preventDefault();
+                var imagenSrc = this.querySelector('img').src;
+                var nuevaVentana = window.open('ampliar.html?imagen=' + imagenSrc, '_blank');
+            });
+        });
+    </script>
+  </nav>
+    <section class="custom-section">
+      <h2>Nuestros productos</h2>
+      <p>Este es el contenido principal de la página.</p>
+      <img src="imagenes/j_1.jpeg.webp" width="100px" height="100px">
+      <img src="imagenes/es_2.jpeg" width="100px" height="100px">
+      <img src="imagenes/v_5.jpeg" width="100px" height="100px">
+      <img src="imagenes/v_2.jpeg" width="100px" height="100px">
+      <img src="imagenes/es_1.jpeg" width="100px" height="100px">
+      <img src="imagenes/v_6.jpg" width="100px" height="100px">
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo
+        s facilis corrupti inventore dicta quibusdam, delectus similique officiis
+        s facilis corrupti inventore dicta quibusd</p>
+         <p>sto alias ea pariatur labore.</p>
+      <img src="imagenes/v_1.jpeg" width="100px" height="100px">
+      <img src="imagenes/s_1.png" width="100px" height="100px">
+      <img src="imagenes/v_8.jpeg" width="100px" height="100px">
+      <img src="imagenes/es_2.jpeg" width="100px" height="100px">
+      <img src="imagenes/s_2.png" width="100px" height="100px">
+      <img src="imagenes/tomate_3.jpg" width="100px" height="100px">
+      <img src="imagenes/tomate_2.jpeg" width="100px" height="100px">
+      <img src="imagenes/tomate_1.jpeg" width="100px" height="100px">
+      <img src="imagenes/v_8.jpeg" width="100px" height="100px">
     </section>
-    
-    <section class="section-wrapper">
-        <section>
-            <!-- Contenido de la primera sección -->
-            <h3>Productos de temporada y ....</h3>
-            <img class="image custom-image" src="imagenes/arbol_1.jpg" width="100px" height="100px">
-            <img class="image custom-image" src="imagenes/tomate_1.jpeg" width="100px" height="100px">
-            <p> Lorem ipsum dolor sit amet, consectetur
-                 adipisicing elit. Eaque necessitatibus
-                  nemo similique natus ab adipisci ad,
-                   eveniet amet tempora dolor iure tenetur
-                    voluptas temporibus
-                 deserunt tempore earum! Commodi, veritatis. Iusto.</p>
-                 
-        </section>
-        <section>
-            <!-- Contenido de la segunda sección -->
-           <h3>¿Cuál es la cantidad adecuada de agua para los tomates?</h3>
-           <img class="image custom-image" src="imagenes/tomate_1.jpeg" width="100px" height="100px">
-           <img class="image custom-image" src="imagenes/tomate_3.jpg" width="100px" height="100px">
-<p>Cuál es la cantidad adecuada de agua para los tomates?
-    La cantidad de agua necesaria para los tomates depende de varios factores, como
-     el tipo de suelo, el clima y el tamaño y edad de las plantas. En general, 
-     los tomates necesitan al menos 1-2 pulgadas de agua por semana. Esto 
-     puede aumentar en climas más cálidos o en suelos más arenosos. Además, es importante
-      que el agua llegue al sistema de raíces, en lugar de solo regar la superficie.
-       Los tomates también necesitan un buen suministro de
-     nutrientes, que se puede obtener mediante la aplicación de fertilizantes.
-   </p>
-
-        </section>
-    </section>      
-            
-            
-    <footer>
-        <a>Derechos de autor © 2023 DB. Todos los derechos reservados.</a>
-    </footer>
+    <aside class="custom-aside">
+      <h2>Nuestro Servicio</h2>
+      <p>Quizas te interese:</p>
+      <p>Recetas</p>
+      <p>Imagenes</p>
+      <p>Blog</p>
+      <p>Consejos</p>
+      <p>El huerto y sus complicaciones</p>
+      <p>Como sembrar</p>
+      <p>Como no sembrar</p>
+    </aside>
+  </div>
+  <footer>
+    <p>Derechos Reservados &copy; DB_2023</p>
+  </footer>
 </body>
 </html>
